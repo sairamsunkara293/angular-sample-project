@@ -1,0 +1,59 @@
+<div class="container-fluid">
+  <div class="border rounded  p-3 mb-4">
+    <h5>{{ data[0].group_name }}</h5>
+    <p class="text-muted small">
+      Drag and drop to build your complex backend in just mins
+    </p>
+    <div class="row px-2">
+      <template v-for="(item,index) in data">
+        <div class="col-md-3 col-sm-12 mb-3 px-2">
+          <div class="card p-3 h-100">
+            <div><i :class="item.icons"></i></div>
+            <h6>
+              <a :href="item.link">{{ item.name }}</a>
+            </h6>
+            <p class="text-muted small">{{ item.value }}</p>
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+</div>
+
+<div>
+  <div class="row">
+    <template v-for="(item,index) in data">
+      <div class="col-md-3 col-sm-12  mb-3 px-2">
+        <div class="card cursor-pointer h-100">
+          <div
+            class="d-flex align-items-center justify-content-between pt-3 px-3"
+          >
+            <div><i :class="item.copied_wf_id"></i></div>
+            <workflow_lists_option
+              :params="item.ID"
+              class="d-flex justify-content-end"
+            ></workflow_lists_option>
+          </div>
+
+          <div class="card-body">
+            <h6
+              class="text-nowrap textcard mb-2 text-truncate card-title mb-0"
+              :title="`${item.NAME}`"
+            >
+              <a :href="`#`" class="text-decoration-none">{{ item.NAME }}</a>
+            </h6>
+            <p class="text-muted small mb-0">{{ item.DESCRIPTION }}</p>
+          </div>
+          <div class="card-footer bg-transparent">
+            <div class="d-flex align-items-center justify-content-between">
+              <p class="text-muted small mb-0">
+                Created On
+              </p>
+              <div class="ml-2 text-muted small">{{ item.CREATE_DATE }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+  </div>
+</div>

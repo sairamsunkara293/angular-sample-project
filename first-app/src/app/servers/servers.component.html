@@ -1,0 +1,50 @@
+<!-- <button class="btn btn-primary"
+ [disabled]="!allowedServer"
+ (click)="serverCreated()">
+    Add Server</button>
+    <p>{{serverStatus}}</p>
+<div class="mt-2" [innerText]="allowedServer"></div> -->
+<!-- <input class="form-control" (input)="updateServerName($event)">
+<input class="form-control" [(ngModel)]="serverName"> -->
+<!-- <p>{{serverName}}</p> -->
+
+<!-- Assignment -->
+<!-- <ol class="text-left">
+  <li>
+    Add a input filed update a property (userName) via Twoway-data binding.
+  </li>
+  <li>
+    Output the userName property vvia string interpolation (in a paragraph below
+    the input filed)
+  </li>
+  <li>
+    Add a button which may only be clicked if the userName is NOT a empty
+    string.
+  </li>
+  <li>
+    Upon clicking the button the userName should be reset to an empty string
+  </li>
+</ol>
+<hr>
+<input class="form-control" [(ngModel)]="userName" />
+
+<p>{{ userName }}</p> -->
+
+
+<!-- Approach---1 -->
+<!-- <button class="btn btn-primary" (click)="resetButton()" [disabled]="!userName">
+  Reset
+</button> -->
+
+<!-- Approach---2 -->
+<!-- <button
+  class="btn btn-primary"
+  (click)="userName = ''"
+  [disabled]="userName === ''"
+>
+  Reset
+</button> -->
+
+<input type="text" class="form-control" [(ngModel)]="serverStatus" >
+<p *ngIf="serverCreated">{{serverStatus}}</p>
+<button (click)="serverCreated()" [disabled]="allowedServer">click</button>
