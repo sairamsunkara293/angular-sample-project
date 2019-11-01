@@ -1,0 +1,93 @@
+<div class="media-body card mb-3 h-100">
+  <div
+    class="d-md-flex align-items-center justify-content-between p-3 border-bottom"
+  >
+    <div class="d-md-flex align-items-center">
+      <h5 class=" pr-3 mb-0  text-capitalize">
+        <a :href="`#/dv1/123/3956/dashboard`">{{
+          data[0].CNAME
+        }}</a>
+      </h5>
+      <br /><span class="badge badge-primary">{{ data[0].URL }}</span>
+    </div>
+  </div>
+  <div class="row my-2 mx-2 app-container">
+    <template v-for="(item,index) in data">
+      <template v-if="item.ID != null">
+        <template v-if="item.IS_PUBLISHED==0">
+          <div class="p-2 col-md-2 text-center appup_image ">
+            <div class="card border btn alert-primary mb-2 h-100">
+              <div class="rounded">
+                <cloude_home_page_cards_material_dropdown_option
+                  :params="item.ID"
+                  class="d-flex justify-content-end"
+                ></cloude_home_page_cards_material_dropdown_option>
+                <div class="app-image mb-2 mx-2 px-3  text-center">
+                  <img
+                    src="https://500apps.com/images/cloud.svg"
+                    width="64"
+                    alt="/"
+                    class=""
+                  />
+                  <div class="hover">
+                    <div class="title-apps"></div>
+                  </div>
+                </div>
+              </div>
+              <h6
+                class="text-nowrap pt-2 px-3 text-truncate card-title text-center pb-1 mb-4"
+                :title="`${item.NAME}`"
+              >
+                <a :href="`#/dv1/123/3956/dashboard`">{{ item.NAME }}</a>
+              </h6>
+            </div>
+          </div>
+        </template>
+        <template v-else-if="item.IS_PUBLISHED==1">
+          <div class="p-2 col-md-2 text-center appup_image ">
+            <div class="card border btn alert-success mb-2">
+              <div class="rounded">
+                <cards_material_dropdown_option
+                  :params="item.ID"
+                  class="d-flex justify-content-end"
+                ></cards_material_dropdown_option>
+                <div class="app-image mb-2 mx-2 px-3  text-center">
+                  <img
+                    src="https://500apps.com/images/cloud.svg"
+                    width="64"
+                    alt="/"
+                    class=""
+                  />
+                  <div class="hover">
+                    <div class="title-apps"></div>
+                  </div>
+                </div>
+              </div>
+              <h6
+                class="text-nowrap pt-2 px-3 text-truncate card-title text-center pb-1 mb-4"
+                :title="`${item.NAME}`"
+              >
+                <a :href="`#/developers/${item.ID}/${item.ID}`">{{
+                  item.NAME
+                }}</a>
+              </h6>
+            </div>
+          </div>
+        </template>
+      </template>
+    </template>
+    <div class="p-2 col-md-2 text-center appup-add-more-card">
+      <div class="card btn btn-light h-100">
+        <div class="card-body m-0">
+          <div class="m-2">
+            <span class="display-4">
+              <a href="#"> <i class="fal fa-plus"></i></a
+            ></span>
+          </div>
+          <h6 class="card-title text-center mb-0"><a href="#">Add More</a></h6>
+        </div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+</div>
