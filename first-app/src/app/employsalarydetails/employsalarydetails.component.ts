@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./employsalarydetails.component.css']
 })
 export class EmploysalarydetailsComponent implements OnInit {
+  headerdetails:any=["Employee salary","basic salary","da","hra","Total"];
   employdetails: any = [];
   totalsalary: any = 235;
   constructor() { }
-
+ 
   ngOnInit() {
     this.employdetails.push({
       id: 1,
@@ -35,8 +36,10 @@ export class EmploysalarydetailsComponent implements OnInit {
         hra: 355,
         total: 0
       })
+      // this.headerdetails.push({empValue:"Employee value", bsalary:"Basic salary", da:"da", hra:"hra", total:"Total"})
     this.resuability();
   }
+ 
   resuability() {
     let basicgrandtotal = 0, dagrandtotal = 0, hragrandtotal = 0, toatlsalarygrandtotal = 0;
     let maxsalary = [];
@@ -66,12 +69,12 @@ export class EmploysalarydetailsComponent implements OnInit {
         total: (toatlsalarygrandtotal / index).toFixed(3)
       },
       {
-        name: 'Grand Total',
+        name: 'Maximum Value',
         basicsalary: Math.max(...maxsalary.map(o => o.maxbasicsalary), 0),
         da: Math.max(...maxsalary.map(o => o.maxda), 0),
         hra: Math.max(...maxsalary.map(o => o.maxhra), 0),
         total: Math.max(...maxsalary.map(o => o.maxtotal), 0)
       }
     )
-  }
+  }  
 }

@@ -1,41 +1,33 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-        <h1 class="text-capitalize mt-5">Employee salary   details</h1>
-        <div class="table-responsive border-top-0 border border-bottom-0">
-            <table class="table table-responsive d-md-table border-bottom mb-0">
-               <thead>
-                  <tr>
-                     
-                     <th scope="col" class="border-bottom-0">Employee Value</th>
-                     <th scope="col" class="border-bottom-0">Basic salary</th>
-                     <th scope="col" class="border-bottom-0">DA</th>
-                     <th scope="col" class="border-bottom-0">HRA</th>
-                     <th scope="col" class="border-bottom-0">Total</th>
-                  </tr>
-               </thead>
-               <tbody>
-                  <tr *ngFor="let x of employdetails">
-                     
-                     <td nowrap="" >{{x.name}}</td>
-                     <td nowrap="">{{x.basicsalary}}</td>
-                     <td nowrap="">{{x.da}}</td>
-                     <td nowrap="">{{x.hra}}</td>
-                     <td nowrap="">
-                      {{x.total}}
-                     </td>
-                  </tr>
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-               </tbody>
-            </table>
-            
-         </div>
+      <h1 class="text-capitalize mt-5">Employee salary details</h1>
+      <div class="table-responsive border-top-0 border border-bottom-0">
+        <table class="table table-responsive d-md-table border-bottom mb-0">
+          <thead>
+            <tr>
+              <th
+                scope="col"
+                class="border-bottom-0 text-uppercase"
+                *ngFor="let x of headerdetails; let i = index"
+              >
+               {{i}}. {{ x }}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let x of employdetails">
+              <td nowrap="" class="text-capitalize">{{ x.name }}</td>
+              <td nowrap="">{{ x.basicsalary }}</td>
+              <td nowrap="">{{ x.da }}</td>
+              <td nowrap="">{{ x.hra }}</td>
+              <td nowrap="">
+                {{ x.total }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
