@@ -11,18 +11,18 @@
                 class="border-bottom-0 text-uppercase"
                 *ngFor="let x of headerdetails; let i = index"
               >
-               {{i}}. {{ x }}
+               {{i+1}}. {{ x | titlecase}}
               </th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let x of employdetails">
-              <td nowrap="" class="text-capitalize">{{ x.name }}</td>
-              <td nowrap="">{{ x.basicsalary }}</td>
-              <td nowrap="">{{ x.da }}</td>
-              <td nowrap="">{{ x.hra }}</td>
+              <td nowrap="" class="text-capitalize">{{ x.name |uppercase}}</td>
+              <td nowrap="">{{ x.basicsalary | currency:'INR'}}</td>
+              <td nowrap="">{{ x.da | currency:'INR'}}</td>
+              <td nowrap="">{{ x.hra | currency:'INR':'symbol':'4.1-2'}}</td>
               <td nowrap="">
-                {{ x.total }}
+                {{ x.total | currency:'INR'}}
               </td>
             </tr>
           </tbody>

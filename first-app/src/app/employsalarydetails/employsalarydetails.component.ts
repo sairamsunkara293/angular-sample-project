@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./employsalarydetails.component.css']
 })
 export class EmploysalarydetailsComponent implements OnInit {
-  headerdetails:any=["Employee salary","basic salary","da","hra","Total"];
+  headerdetails:any=["employee salary","basic salary","da","hra","total"];
   employdetails: any = [];
   totalsalary: any = 235;
   constructor() { }
